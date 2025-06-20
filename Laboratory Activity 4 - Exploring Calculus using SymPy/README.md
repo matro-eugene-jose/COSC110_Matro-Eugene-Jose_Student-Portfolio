@@ -14,9 +14,9 @@ This activity demonstrates how to use SymPy for basic calculus operations: treat
   * `sympy`  
 
 Ensure SymPy is installed before running:  
-`
+```
 pip install sympy
-`
+```
 
 ---
 
@@ -28,22 +28,22 @@ pip install sympy
 
 Code:
 
-`
+```
 from sympy import symbols
 
 x = symbols('x')
 print(x + x)   # expected: 2*x
 print(x * x)   # expected: x**2
-`
+```
 
 Pseudocode:
 
-`
+```
 Import symbols from sympy
 Declare a symbolic variable x
 Evaluate x + x  → prints 2*x
 Evaluate x * x  → prints x**2
-`
+```
 
 Questions:
 
@@ -58,24 +58,24 @@ Questions:
 
 Code:
 
-`
+```
 from sympy import symbols, sin, limit
 
 x = symbols('x')
 expr = sin(x) / x
 lim_val = limit(expr, x, 0)
 print("limit(sin(x)/x, x→0) =", lim_val)   # expected: 1
-`
+```
 
 Pseudocode:
 
-`
+```
 Import symbols, sin, limit from sympy
 Declare x as symbol
 Define expr = sin(x)/x
 Compute limit(expr, x, 0)
 Print the result
-`
+```
 
 Question:
 
@@ -89,22 +89,22 @@ Question:
 
 Code:
 
-`
+```
 from sympy import symbols, diff
 
 x = symbols('x')
 result = diff(x**2, x)
 print("diff(x**2, x) =", result)   # expected: 2*x
-`
+```
 
 Pseudocode:
 
-`
+```
 Import symbols, diff from sympy
 Declare symbol x
 Call diff(x**2, x)
 Print derivative 2*x
-`
+```
 
 Question:
 
@@ -118,22 +118,22 @@ Question:
 
 Code:
 
-`
+```
 from sympy import symbols, exp
 
 x = symbols('x')
 series_expansion = exp(x).series(x, 0, 4)
 print("exp(x) series up to x^3:", series_expansion)
-`
+```
 
 Pseudocode:
 
-`
+```
 Import symbols, exp from sympy
 Declare symbol x
 Compute exp(x).series(x, 0, 4)  # terms up to x^3 plus O(x^4)
 Print series: 1 + x + x^2/2! + x^3/3! + O(x^4)
-`
+```
 
 Questions:
 
@@ -148,23 +148,23 @@ Questions:
 
 Code:
 
-`
+```
 from sympy import symbols, Eq, solve
 
 x = symbols('x')
 solutions = solve(Eq(x**2 - 4, 0), x)
 print("Solutions to x^2 - 4 = 0:", solutions)  # expected: [-2, 2]
-`
+```
 
 Pseudocode:
 
-`
+```
 Import symbols, Eq, solve from sympy
 Declare symbol x
 Construct Eq(x**2 - 4, 0)
 Call solve(...) to get roots [-2, 2]
 Print the solutions
-`
+```
 
 Questions:
 
