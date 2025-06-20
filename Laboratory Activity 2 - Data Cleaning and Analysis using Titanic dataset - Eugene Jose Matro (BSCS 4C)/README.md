@@ -34,20 +34,20 @@ This activity details a structured data-preparation and exploratory-analysis wor
 
 **Goal**: Load the dataset and examine its structure.
 
-`
+```
 import pandas as pd
 df = pd.read_csv('train.csv')
 df.head()
 df.info()
-`
+```
 
 *Pseudocode*:
 
-`
+```
 Load CSV into DataFrame
 Display first five rows
 Show column data types and count non-null values
-`
+```
 
 ---
 
@@ -61,14 +61,14 @@ Show column data types and count non-null values
 | Age      | 177        | Fill missing with median age |
 | Embarked | 2          | Fill missing with mode value |
 
-`
+```
 # Drop sparse column
 df.drop(columns=['Cabin'], inplace=True)
 
 # Impute Age & Embarked
 df['Age'].fillna(df['Age'].median(), inplace=True)
 df['Embarked'].fillna(df['Embarked'].mode()[0], inplace=True)
-`
+```
 
 *Flowchart*:
 
@@ -82,11 +82,11 @@ Start -> count nulls per column -> if >50% drop -> elif >0% fill -> End
 
 **Goal**: Ensure unique records.
 
-`
+```
 dup_count = df.duplicated().sum()
 if dup_count > 0:
     df.drop_duplicates(inplace=True)
-`
+```
 
 ---
 
@@ -94,22 +94,22 @@ if dup_count > 0:
 
 **Goal**: Optimize memory and ensure consistency.
 
-`
+```
 # Convert categorical fields
 df['Survived'] = df['Survived'].astype('category')
 df['Pclass']   = df['Pclass'].astype('category')
 
 # Standardize column names
 df.columns = df.columns.str.lower()
-`
+```
 
 ---
 
 #### 3.5 Saving the Cleaned Dataset
 
-`
+```
 df.to_csv('titanic_cleaned.csv', index=False)
-`
+```
 
 ---
 
@@ -119,7 +119,7 @@ df.to_csv('titanic_cleaned.csv', index=False)
 
 **Objective**: Investigate how traveling alone vs. with family affected survival.
 
-`
+```
 # Compute family size as sibsp + parch
  df['family_size'] = df['sibsp'] + df['parch']
  
@@ -130,7 +130,7 @@ plt.xlabel('Family Size')
 plt.ylabel('Survival Rate')
 plt.title('Survival Rate vs. Family Size')
 plt.show()
-`
+```
 
 **Insight**: Passengers traveling with 1–3 family members had higher survival rates, while large families fared worse.
 
@@ -140,7 +140,7 @@ plt.show()
 
 **Objective**: Examine fare distribution across passenger classes and its relation to survival.
 
-`
+```
 import matplotlib.pyplot as plt
 
 # Boxplot of fare by class
@@ -158,7 +158,7 @@ plt.title('Survival Rate by Pclass')
 plt.xlabel('Passenger Class')
 plt.ylabel('Survival Rate')
 plt.show()
-`
+```
 
 **Insight**: Higher classes paid steeper fares and enjoyed significantly higher survival rates, illustrating class-based evacuation priority.
 
