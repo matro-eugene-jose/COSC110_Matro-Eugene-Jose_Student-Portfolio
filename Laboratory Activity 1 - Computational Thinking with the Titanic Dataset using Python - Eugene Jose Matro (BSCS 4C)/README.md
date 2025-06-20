@@ -24,7 +24,7 @@ This activity documents a step‑by‑step computational thinking approach to an
 
 **Goal**: Load the data and grasp its structure.
 
-`
+```
 import pandas as pd
 
 # 1. Load the CSV into a DataFrame
@@ -34,7 +34,7 @@ df = pd.read_csv('titanic.csv')
 df.head()
 df.info()
 df.describe()
-`
+```
 
 **Pseudocode**:
 
@@ -57,14 +57,14 @@ compute basic summary statistics
 | Age      | 177     | **FILL** with median             |
 | Embarked | 2       | **FILL** with mode (most common) |
 
-`
+```
 # Drop and impute
 cols_to_drop = ['Cabin']
 df.drop(columns=cols_to_drop, inplace=True)
 df['Age'].fillna(df['Age'].median(), inplace=True)
 df['Embarked'].fillna(df['Embarked'].mode()[0], inplace=True)
 df.info()
-`
+```
 
 **Flowchart**:
 
@@ -78,10 +78,10 @@ Start -> count nulls per column -> if null_count > 50% then drop -> else if null
 
 **Goal**: Determine overall survival probability.
 
-`
+```
 survival_rate = df['Survived'].mean()
 print(f"Overall Survival Rate: {survival_rate:.2%}")
-`
+```
 
 **Interpretation**: At \~38.4%, fewer than half of the passengers survived.
 
@@ -91,7 +91,7 @@ print(f"Overall Survival Rate: {survival_rate:.2%}")
 
 **Goal**: Compare age distributions for survivors and non‑survivors.
 
-`
+```
 import matplotlib.pyplot as plt
 
 # Histogram overlay
@@ -107,7 +107,7 @@ avg_survived = df[df['Survived']==1]['Age'].mean()
 avg_nonsurv = df[df['Survived']==0]['Age'].mean()
 print(f"Avg Age (Survived): {avg_survived:.1f}")
 print(f"Avg Age (Did Not Survive): {avg_nonsurv:.1f}")
-`
+```
 
 **Results**:
 
