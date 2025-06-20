@@ -35,9 +35,9 @@ pip install sympy
 **Goal**: Load core SymPy functions and classes so future Tasks can use symbols, equations, simplification, expansion, etc.
 Code:
 
-`
+```
 from sympy import *
-`
+```
 
 Pseudocode:
 
@@ -51,7 +51,7 @@ Pseudocode:
 * Expression B: √50 × √(5/9)
   Code:
 
-`
+```
 # Expression A
 result1 = Rational(5, 3) + sqrt(10)/2
 print(f"5/3 + sqrt(10)/2 = {result1}  (approx ≈ {result1.evalf()})")
@@ -59,7 +59,7 @@ print(f"5/3 + sqrt(10)/2 = {result1}  (approx ≈ {result1.evalf()})")
 # Expression B
 result2 = sqrt(50) * sqrt(Rational(5, 9))
 print(f"sqrt(50) * sqrt(5/9) = {result2}  (approx ≈ {result2.evalf()})")
-`
+```
 
 Pseudocode:
 
@@ -73,13 +73,13 @@ Pseudocode:
 * Equations: 2x + 3y = 12, and x − y = 4.
   Code:
 
-`
+```
 x, y = symbols('x y')
 equation1 = Eq(2*x + 3*y, 12)
 print("Equation1:", equation1)
 equation2 = Eq(x - y, 4)
 print("Equation2:", equation2)
-`
+```
 
 Pseudocode:
 
@@ -94,7 +94,7 @@ Pseudocode:
 * Expression 2: (1 − 1/(1 + 1/x)) / (1 + 1/x)
   Code:
 
-`
+```
 x = symbols('x')
 
 expr1 = (x**2 + 2*x + 1) / (x + 1)
@@ -104,7 +104,7 @@ print(f"Simplified (x^2 + 2x + 1)/(x + 1) = {simplified_expr1}")
 expr2 = (1 - 1/(1 + 1/x)) / (1 + 1/x)
 simplified_expr2 = simplify(expr2)
 print(f"Simplified (1 - 1/(1 + 1/x)) / (1 + 1/x) = {simplified_expr2}")
-`
+```
 
 Pseudocode:
 
@@ -119,7 +119,7 @@ Pseudocode:
 * Expression B: (2x + y)(x − 2y)
   Code:
 
-`
+```
 x, y = symbols('x y')
 
 exprA = (2*x + 2)**2
@@ -129,7 +129,7 @@ print(f"Expanded (2x + 2)^2 = {expandedA}")
 exprB = (2*x + y)*(x - 2*y)
 expandedB = expand(exprB)
 print(f"Expanded (2x + y)*(x - 2y) = {expandedB}")
-`
+```
 
 Pseudocode:
 
